@@ -7,9 +7,10 @@ export interface Eleve {
   email: string,
   tel: string
 }
-const initialState: {
-  value: Eleve[]
-} = { value: [] }
+export interface FormSliceState {
+  value : Eleve[]
+}
+const initialState: FormSliceState = { value: [] }
 
 initialState.value = [];
 
