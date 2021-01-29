@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {addStudent} from '../saga';
+import {addStudent} from '../core/saga';
 
 const mapDispatchToProps = {
   addStudent
@@ -8,7 +8,6 @@ const mapDispatchToProps = {
 
 interface OwnTypes {
   name: String,
-  onSubmit: (event) => void
 }
 
 type FormProps = typeof mapDispatchToProps & OwnTypes;

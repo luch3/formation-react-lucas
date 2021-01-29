@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from "react";
 import {connect} from 'react-redux';
-import {Eleve} from '../FormSlice';
-import {fetchStudent} from '../saga';
+import {Eleve, FormSliceState} from '../core/FormSlice';
+import {fetchStudent} from '../core/saga';
 import './EleveList.css';
+import ElevePanel from './ElevePanel';
+import EleveItem from './EleveItem';
 
 
 //faire interface pour props
-function mapStateToProps(state) {
+function mapStateToProps(state:FormSliceState) {
     return {
-        eleves: (state as {value: Eleve[]}).value 
+        eleves: state.value 
     };
 }
 const mapDispatchToProps = {
@@ -17,38 +19,6 @@ const mapDispatchToProps = {
 
   
 type FormProps = typeof mapDispatchToProps &  {eleves: Eleve[]};
-function EleveItem ({eleve}) {
-    return <div className={"eleve-item"}>
-        <span>
-            {eleve.prenom} {eleve.nom}
-        </span>
-    </div>
-}
-function ElevePanel ({eleve}) {
-    if(!eleve) 
-        return (<div><span>Détails d'un élève:</span></div>);
-    return (
-    <div>
-        <span>Détails d'un élève:</span><br/>
-        <div className={"eleve-item"}>
-            <span>
-                {eleve.id}
-            </span><br/>
-            <span>
-                {eleve.prenom} {eleve.nom}
-            </span><br/>
-            <span>
-                Email: {eleve.email}
-            </span><br/>
-            <span>
-                Tel: {eleve.tel}
-            </span>
-        </div>
-    </div>
-    );
-}
-
-
 
 
 export function EleveList(props: FormProps) {
