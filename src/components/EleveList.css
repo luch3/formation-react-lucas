@@ -1,0 +1,10 @@
+.EleveListVue {
+    display: flex;
+}
+
+.ScrollableUl {
+    height: 70vh;
+    width:80%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
