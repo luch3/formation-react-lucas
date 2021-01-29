@@ -4,8 +4,6 @@ import { Eleve } from './FormSlice';
 import { PayloadAction } from "@reduxjs/toolkit";
 import StudentRepository from './repository/StudentRepository';
 
-//Crete slice saga
-
 
 
 

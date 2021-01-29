@@ -1,17 +1,14 @@
 import './App.css';
 import React from 'react';
-import MyForm from './Form';
-import { Eleve } from '../core/FormSlice';
+import MyForm from './components/Form';
 import { Provider } from 'react-redux';
-import configureStore from '../core/Store';
-import EleveList from './EleveList';
-import AppDB from '../core/AppDB'
+import configureStore from './core/Store';
+import EleveList from './components/EleveList';
 
 const store = configureStore();
 
 
 
-const db = new AppDB();
 export default function App() {
 
 
