@@ -1,5 +1,5 @@
 import { PromiseExtended } from 'dexie';
-import {Eleve} from '../FormSlice'
+import {Eleve} from '../../model/Eleve';
 
 export default interface IStudentRepository {
     addStudent(eleve: Eleve): PromiseExtended<number>;

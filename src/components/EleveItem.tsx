@@ -1,9 +1,15 @@
+import { Eleve } from "../model/Eleve";
 
 
-export default function EleveItem ({eleve}) {
-    return <div className={"eleve-item"}>
+interface IProps {
+    eleve: Eleve;
+    handleClick: () => void;
+}
+
+export default function EleveItem (props:IProps) {
+    return <div className={"eleve-item"} onClick={() => props.handleClick()}>
         <span>
-            {eleve.prenom} {eleve.nom}
+            {props.eleve.prenom} {props.eleve.nom}
         </span>
     </div>
 }

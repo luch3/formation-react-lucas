@@ -1,5 +1,5 @@
 import Dexie from 'dexie';
-import { Eleve } from './FormSlice';
+import {Eleve} from '../model/Eleve';
 
 
 export default class AppDB extends Dexie {

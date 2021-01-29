@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects'
 import { createSliceSaga, SagaType } from "redux-toolkit-saga";
-import { Eleve } from './FormSlice';
+import {Eleve} from '../model/Eleve';
 import { PayloadAction } from "@reduxjs/toolkit";
 import StudentRepository from './repository/StudentRepository';
 

@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {connect} from 'react-redux';
-import {Eleve, FormSliceState} from '../core/FormSlice';
+import {FormSliceState} from '../core/FormSlice';
 import {fetchStudent} from '../core/saga';
 import './EleveList.css';
 import ElevePanel from './ElevePanel';
 import EleveItem from './EleveItem';
+import {Eleve} from '../model/Eleve';
+
 
 
 //faire interface pour props
@@ -29,11 +31,6 @@ export function EleveList(props: FormProps) {
       }, [props]);
 
 
-      const handleClick = (eleve: Eleve) => {
-            setState(eleve);
-      }
-
-
     if(!props.eleves)
         return<ul></ul>;
     return (
@@ -41,7 +38,7 @@ export function EleveList(props: FormProps) {
         <div>
             <nav>
                 <ul className={"ScrollableUl"}>
-                    {props.eleves.map(eleve => <li key={eleve.id} onClick={() => handleClick(eleve)}><EleveItem eleve={eleve} /></li>)}
+                    {props.eleves.map(eleve => <li key={eleve.id}><EleveItem eleve={eleve} handleClick={() => setState(eleve)} /></li>)}
                 </ul>
             </nav>
         </div>

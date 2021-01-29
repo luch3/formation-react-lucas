@@ -1,4 +1,4 @@
-import { Eleve } from "../FormSlice";
+import {Eleve} from '../../model/Eleve';
 import IStudentRepository from "./IStudentRepository";
 import AppDB from "../AppDB";
 import { PromiseExtended } from "dexie";

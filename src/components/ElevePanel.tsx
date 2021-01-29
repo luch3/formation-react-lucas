@@ -1,23 +1,28 @@
+import { Eleve } from "../model/Eleve";
 
 
-export default function ElevePanel ({eleve}) {
-    if(!eleve) 
+interface IProps {
+    eleve: Eleve
+}
+
+export default function ElevePanel (props:IProps) {
+    if(!props.eleve) 
         return (<div><span>Détails d'un élève:</span></div>);
     return (
     <div>
         <span>Détails d'un élève:</span><br/>
         <div className={"eleve-item"}>
             <span>
-                {eleve.id}
+                {props.eleve.id}
             </span><br/>
             <span>
-                {eleve.prenom} {eleve.nom}
+                {props.eleve.prenom} {props.eleve.nom}
             </span><br/>
             <span>
-                Email: {eleve.email}
+                Email: {props.eleve.email}
             </span><br/>
             <span>
-                Tel: {eleve.tel}
+                Tel: {props.eleve.tel}
             </span>
         </div>
     </div>

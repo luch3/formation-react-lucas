@@ -1,12 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {Eleve} from '../model/Eleve';
 
-export interface Eleve {
-  id?: number,
-  nom: string,
-  prenom: string,
-  email: string,
-  tel: string
-}
 export interface FormSliceState {
   value : Eleve[]
 }
